@@ -1,0 +1,129 @@
+/* Nonprofit Section */
+.nonprofit-section {
+  padding: 60px 20px;
+  background-image: url("https://img.freepik.com/free-photo/white-concrete-wall-textures_74190-1530.jpg?t=st=1725702224~exp=1725702824~hmac=5081d53b6b49acbac6d16ff33364c4c77c78892217e7a9c08871ec1f622d8f2c");
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f8f8f8; /* Fallback color */
+}
+
+.nonprofit-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-content {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  flex: 1;
+  padding-right: 30px;
+  margin-bottom: 20px;
+}
+
+.left-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.donate-now-btn {
+  padding: 10px 30px;
+  border: 2px solid orange;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.donate-now-btn:hover {
+  background-color: orange;
+  color: white;
+}
+
+.right-content {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Align icons and text side by side */
+.service-box {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: flex-start; /* Align items at the top */
+  flex: 0 1 45%;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.service-box img {
+  width: 50px;
+  margin-right: 20px; /* Add spacing between the icon and text */
+}
+
+.service-box-text {
+  display: flex;
+  flex-direction: column; /* Stack the heading and paragraph vertically */
+}
+
+.service-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service-box p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nonprofit-container {
+    flex-direction: column;
+  }
+
+  .left-content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .right-content {
+    justify-content: center;
+  }
+
+  .service-box {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .donate-now-btn {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-content h2 {
+    font-size: 28px;
+  }
+
+  .service-box img {
+    width: 40px;
+  }
+
+  .service-box h3 {
+    font-size: 18px;
+  }
+
+  .service-box p {
+    font-size: 13px;
+  }
+}
