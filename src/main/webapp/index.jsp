@@ -45,7 +45,7 @@
         </li>
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Contact Us</a></li>
-        <li><a href="#" class="donate-btn">Donate</a></li>
+        <li><a href="signin.jsp" class="donate-btn">Donate</a></li>
       </ul>
       <div class="hamburger-menu">
         <div class="line"></div>
