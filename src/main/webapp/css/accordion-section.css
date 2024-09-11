@@ -28,6 +28,10 @@
   max-width: 100%;
 }
 
+.accordion-content-wrapper h2{
+	color: #03b5d2;
+}
+
 .accordion .accordion-item {
   border-bottom: 1px solid #e5e5e5;
 }

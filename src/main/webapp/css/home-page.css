@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/* Navbar Styles */
+.navbar {
+    padding-left: 142px;
+    padding-right: 142px;
+    width: 100%;
+    background-color: #f8f9fa;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow when scrolling */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .navbar-text {
+        font-size: 0.875rem;
+    }
+
+    .navbar .btn-primary {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-text {
+        font-size: 0.75rem;
+    }
+
+    .navbar .btn-primary {
+        font-size: 0.875rem;
+    }
+}
+
+/* Navbar Brand and Links */
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.navbar .btn-outline-primary {
+    border-color: orange;
+    color: orange;
+}
+
+.navbar .btn-outline-primary:hover {
+    color: white;
+    background-color: orange;
+}
+
+.navbar .btn-primary {
+    background-color: orange;
+    border-color: orange;
+}
+
+/* Username and Logout Button */
+.navbar-text {
+    margin-right: 10px; /* Adjusts space between username and logout button */
+}
+
+/* Container and text styling */
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.p-3 {
+    padding: 1rem;
+}
+
+/* Category Block */
+.category-block {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.category-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Image */
+.category-block {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.category-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .category-block {
+        padding: 0.8rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .category-block {
+        padding: 0.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}

@@ -36,7 +36,7 @@ public class SigninServlet extends HttpServlet {
             session.setAttribute("firstname", firstname);
             
             // Redirect to welcome page
-            response.sendRedirect("welcome.jsp");
+            response.sendRedirect("home.jsp");
         } else {
             System.out.println("Invalid login credentials.");
             // Redirect back to signin page or show error

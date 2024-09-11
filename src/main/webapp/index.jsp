@@ -12,16 +12,19 @@
     <link rel="stylesheet" href="./css/helping-section.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/accordion-section.css" />
+    <link rel="stylesheet" href="./css/contact-section.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
-        <a href="#"><i class="fa-solid fa-link"></i>Manaakitanga</a>
+        <a href="sigin.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
       </div>
       <ul class="nav-menu">
         <li><a href="#">Home</a></li>
@@ -165,7 +168,7 @@
       <div class="nonprofit-container">
         <div class="left-content">
           <h2>Connects Nonprofits, Donors, & Companies in Every Country</h2>
-          <button class="donate-now-btn">DONATE NOW</button>
+          <button class="donate-now-btn"><a href="signin.jsp">DONATE NOW</a></button>
         </div>
         <div class="right-content">
           <div class="service-box">
@@ -360,6 +363,72 @@
         </div>
       </div>
     </section>
+    
+   <!-- Contact-Section -->
+<section id="contact" class="contact-section py-5">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-header text-center mb-4">
+                <h2>Get in Touch</h2>
+            </div>
+
+            <form action="contact.jsp" method="POST">
+                <div class="row">
+                    <!-- Full Name -->
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Phone Number -->
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
+                        </div>
+                    </div>
+
+                    <!-- Query Type -->
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="query">Query Type</label>
+                            <select id="query" name="query" class="form-control">
+                                <option selected>Please select a query type</option>
+                                <option>General Inquiry</option>
+                                <option>Technical Support</option>
+                                <option>Feedback</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group mb-3">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-custom">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
 
@@ -371,13 +440,13 @@
             We’re curious, passionate, and committed to helping nonprofits learn
             and grow. Donate now!
           </p>
-          <button class="donate-btn">DONATE NOW <span>&#x2665;</span></button>
+          <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button>
         </div>
         <div class="footer-section">
           <h3>CONTACTS</h3>
-          <p><i class="fas fa-map-marker-alt"></i> 92 Bowery St., NY 10013</p>
-          <p><i class="fas fa-envelope"></i> bighearts@mail.com</p>
-          <p><i class="fas fa-phone-alt"></i> +1 800 123 456 789</p>
+          <p><i class="fas fa-map-marker-alt"></i>Hyderabad, Telangana</p>
+          <p><i class="fas fa-envelope"></i> manaakitanga@mail.com</p>
+          <p><i class="fas fa-phone-alt"></i> +91 9807645123</p>
           <div class="social-icons">
             <i class="fab fa-twitter"></i>
             <i class="fab fa-facebook-f"></i>
@@ -413,13 +482,15 @@
           Reserved.
         </p>
       </div>
-      <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-      </div>
+    
     </footer>
 
     <script src="./js/navbarScript.js"></script>
     <script src="./js/carouselScript.js"></script>
     <script src="./js/accordion-section.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

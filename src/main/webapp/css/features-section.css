@@ -42,6 +42,11 @@
   cursor: pointer;
 }
 
+.donate-now-btn a{
+	text-decoration: none;
+	color:#333;
+}
+
 .donate-now-btn:hover {
   background-color: orange;
   color: white;
