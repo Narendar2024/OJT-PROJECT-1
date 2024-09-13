@@ -19,9 +19,9 @@
       body {
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Remove scroll bars */
+        
         box-sizing: border-box;
-        height: 100vh; /* Full viewport height */
+        height: 150vh; /* Full viewport height */
         background: url("assets/image9.jpg") no-repeat center
           center fixed;
         background-size: cover;
@@ -67,7 +67,7 @@
       }
       .container {
         max-width: 800px;
-        padding: 10px; /* Adjust container padding */
+        padding: auto; /* Adjust container padding */
         position: absolute;
         top: 50%;
         left: 50%;
@@ -129,49 +129,63 @@
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <i class="fa-brands fa-fedora"></i
-          ><span class="ms-2">Manaakitanga</span>
-        </a>
-        <!-- Toggler for mobile view -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-          aria-controls="navbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar content -->
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarContent"
-        >
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-            <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-              <a class="nav-link active" aria-current="page" href="other_donation.jsp">Donations</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.jsp">Contact</a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <button class="btn btn-outline-primary me-2" type="button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <!-- Nav Bar Start -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand d-flex align-items-center" href="#"> <i
+				class="fa-brands fa-fedora"></i> <span class="ms-2">Manaakitanga</span>
+			</a>
 
+			<!-- Toggler for mobile view -->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarContent"
+				aria-controls="navbarContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar content -->
+			<div class="collapse navbar-collapse justify-content-between"
+				id="navbarContent">
+				<!-- Centered Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+					<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a>
+					</li>
+				</ul>
+
+				<!-- Search, Username, and Logout Button -->
+				<div class="d-flex align-items-center">
+					
+
+					<!-- Username and Logout Button -->
+					<%
+					if (session != null && session.getAttribute("firstname") != null) {
+						String firstname = (String) session.getAttribute("firstname");
+					%>
+					<span class="navbar-text me-3">Hello, <%=firstname%>!
+					</span>
+					<form action="LogoutServlet" method="get" class="d-inline">
+						<button class="btn btn-primary" type="submit">Logout</button>
+					</form>
+					<%
+					} else {
+					%>
+					<span class="navbar-text me-3">Hello, Guest!</span>
+					<%
+					}
+					%>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Nav Bar End -->
+	
+	
     <div class="container">
       <div class="form-container">
         <h2>Other Donation</h2>

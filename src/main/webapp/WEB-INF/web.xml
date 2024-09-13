@@ -11,12 +11,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>DonerServlet</display-name>
-    <servlet-name>DonerServlet</servlet-name>
-    <servlet-class>donarPackage.DonerServlet</servlet-class>
+    <display-name>FetchPostalAgenciesServlet</display-name>
+    <servlet-name>FetchPostalAgenciesServlet</servlet-name>
+    <servlet-class>donarPackage.FetchPostalAgenciesServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DonerServlet</servlet-name>
-    <url-pattern>/DonerServlet</url-pattern>
+    <servlet-name>FetchPostalAgenciesServlet</servlet-name>
+    <url-pattern>/FetchPostalAgenciesServlet</url-pattern>
   </servlet-mapping>
 </web-app>

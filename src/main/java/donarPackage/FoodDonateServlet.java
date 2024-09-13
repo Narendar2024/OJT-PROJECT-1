@@ -17,8 +17,8 @@ import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.util.Properties;
 
-@WebServlet("/DonorServlet")
-public class DonerServlet extends HttpServlet {
+@WebServlet("/FoodDonateServlet")
+public class FoodDonateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // JDBC driver name and database URL
@@ -43,12 +43,14 @@ public class DonerServlet extends HttpServlet {
 
         // Retrieve form data
         String donorName = request.getParameter("donor_name");
-        String bookName = request.getParameter("book_name");
-        String bookAuthor = request.getParameter("book_author");
-        int bookYear = Integer.parseInt(request.getParameter("book_year"));
-        int bookQuantity = Integer.parseInt(request.getParameter("book_quantity"));
-        String donorPhoneNumber = request.getParameter("donor_phone_number");
+        String foodType = request.getParameter("food_type");
+        String foodName = request.getParameter("food_name");
+        String foodQuantity = request.getParameter("food_quantity");
+        String expiryDate = request.getParameter("expiry_date");
         String donorEmail = request.getParameter("donor_email");
+        String donorPhone = request.getParameter("donor_phone");
+        String pinCode = request.getParameter("pin_code");
+        String postOffice = request.getParameter("post_office");
         String donorAddress = request.getParameter("donor_address");
 
         // JDBC code to insert data into database
@@ -62,22 +64,24 @@ public class DonerServlet extends HttpServlet {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // Create SQL insert statement
-            String sql = "INSERT INTO Book_donors (donor_name, book_name, book_author, book_year, book_quantity, donor_phone_number, donor_email, donor_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Food_donors (donor_name, food_type, food_name, food_quantity, expiry_date, donor_email, donor_phone, pin_code, post_office, donor_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, donorName);
-            pstmt.setString(2, bookName);
-            pstmt.setString(3, bookAuthor);
-            pstmt.setInt(4, bookYear);
-            pstmt.setInt(5, bookQuantity);
-            pstmt.setString(6, donorPhoneNumber);
-            pstmt.setString(7, donorEmail);
-            pstmt.setString(8, donorAddress);
+            pstmt.setString(2, foodType);
+            pstmt.setString(3, foodName);
+            pstmt.setString(4, foodQuantity);
+            pstmt.setString(5, expiryDate);
+            pstmt.setString(6, donorEmail);
+            pstmt.setString(7, donorPhone);
+            pstmt.setString(8, pinCode);
+            pstmt.setString(9, postOffice);
+            pstmt.setString(10, donorAddress);
 
             // Execute the statement
             pstmt.executeUpdate();
 
             // Send invoice email
-            sendInvoiceEmail(donorEmail, donorName, bookName, bookAuthor, bookYear, bookQuantity, donorAddress);
+            sendInvoiceEmail(donorName, foodType, foodName, foodQuantity, expiryDate, donorEmail, donorPhone, pinCode, postOffice, donorAddress);
 
             // Respond with an alert and redirect to the form
             out.println("<script type=\"text/javascript\">");
@@ -98,7 +102,7 @@ public class DonerServlet extends HttpServlet {
         }
     }
 
-    private void sendInvoiceEmail(String toEmail, String donorName, String bookName, String bookAuthor, int bookYear, int bookQuantity, String donorAddress) {
+    private void sendInvoiceEmail(String donorName, String foodType, String foodName, String foodQuantity, String expiryDate, String donorEmail, String donorPhone, String pinCode, String postOffice, String donorAddress) {
         // Set up email server properties
         Properties props = new Properties();
         props.put("mail.smtp.host", SMTP_HOST);
@@ -122,21 +126,24 @@ public class DonerServlet extends HttpServlet {
             message.setFrom(new InternetAddress(EMAIL_USERNAME));
 
             // Set To: header field
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donorEmail));
 
             // Set Subject: header field
-            message.setSubject("Donation Invoice");
+            message.setSubject("Food Donation Invoice");
 
             // Set the actual message
             String emailContent = "<html><body>"
-                + "<h3>Donation Invoice</h3>"
+                + "<h3>Food Donation Invoice</h3>"
                 + "<p>Dear " + donorName + ",</p>"
                 + "<p>Thank you for your generous donation. Here are the details of your donation:</p>"
                 + "<ul>"
-                + "<li><strong>Book Name:</strong> " + bookName + "</li>"
-                + "<li><strong>Book Author:</strong> " + bookAuthor + "</li>"
-                + "<li><strong>Book Published Year:</strong> " + bookYear + "</li>"
-                + "<li><strong>Book Quantity:</strong> " + bookQuantity + "</li>"
+                + "<li><strong>Food Type:</strong> " + foodType + "</li>"
+                + "<li><strong>Food Name:</strong> " + foodName + "</li>"
+                + "<li><strong>Quantity:</strong> " + foodQuantity + " kg</li>"
+                + "<li><strong>Expiration Date:</strong> " + expiryDate + "</li>"
+                + "<li><strong>Phone Number:</strong> " + donorPhone + "</li>"
+                + "<li><strong>Pin Code:</strong> " + pinCode + "</li>"
+                + "<li><strong>Nearest Post Office:</strong> " + postOffice + "</li>"
                 + "<li><strong>Donor Address:</strong> " + donorAddress + "</li>"
                 + "</ul>"
                 + "<p>Thank you once again for your support!</p>"

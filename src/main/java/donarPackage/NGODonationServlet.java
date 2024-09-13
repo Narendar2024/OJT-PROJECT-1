@@ -17,8 +17,8 @@ import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.util.Properties;
 
-@WebServlet("/DonorServlet")
-public class DonerServlet extends HttpServlet {
+@WebServlet("/NGODonationServlet")
+public class NGODonationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // JDBC driver name and database URL
@@ -43,13 +43,14 @@ public class DonerServlet extends HttpServlet {
 
         // Retrieve form data
         String donorName = request.getParameter("donor_name");
-        String bookName = request.getParameter("book_name");
-        String bookAuthor = request.getParameter("book_author");
-        int bookYear = Integer.parseInt(request.getParameter("book_year"));
-        int bookQuantity = Integer.parseInt(request.getParameter("book_quantity"));
-        String donorPhoneNumber = request.getParameter("donor_phone_number");
+        String donorPhone = request.getParameter("donor_phone");
         String donorEmail = request.getParameter("donor_email");
         String donorAddress = request.getParameter("donor_address");
+        String ngoType = request.getParameter("ngo_type");
+        String ngoName = request.getParameter("ngo_name");
+        String donationType = request.getParameter("donation_type");
+        String donationAmount = request.getParameter("donation_amount");
+        String additionalInfo = request.getParameter("additional_info");
 
         // JDBC code to insert data into database
         Connection conn = null;
@@ -62,22 +63,24 @@ public class DonerServlet extends HttpServlet {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // Create SQL insert statement
-            String sql = "INSERT INTO Book_donors (donor_name, book_name, book_author, book_year, book_quantity, donor_phone_number, donor_email, donor_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO NGO_donors (donor_name, donor_phone, donor_email, donor_address, ngo_type, ngo_name, donation_type, donation_amount, additional_info) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, donorName);
-            pstmt.setString(2, bookName);
-            pstmt.setString(3, bookAuthor);
-            pstmt.setInt(4, bookYear);
-            pstmt.setInt(5, bookQuantity);
-            pstmt.setString(6, donorPhoneNumber);
-            pstmt.setString(7, donorEmail);
-            pstmt.setString(8, donorAddress);
+            pstmt.setString(2, donorPhone);
+            pstmt.setString(3, donorEmail);
+            pstmt.setString(4, donorAddress);
+            pstmt.setString(5, ngoType);
+            pstmt.setString(6, ngoName);
+            pstmt.setString(7, donationType);
+            pstmt.setString(8, donationAmount);
+            pstmt.setString(9, additionalInfo);
 
             // Execute the statement
             pstmt.executeUpdate();
 
             // Send invoice email
-            sendInvoiceEmail(donorEmail, donorName, bookName, bookAuthor, bookYear, bookQuantity, donorAddress);
+            sendInvoiceEmail(donorName, donorPhone, donorEmail, donorAddress, ngoType, ngoName, donationType, donationAmount, additionalInfo);
 
             // Respond with an alert and redirect to the form
             out.println("<script type=\"text/javascript\">");
@@ -98,7 +101,7 @@ public class DonerServlet extends HttpServlet {
         }
     }
 
-    private void sendInvoiceEmail(String toEmail, String donorName, String bookName, String bookAuthor, int bookYear, int bookQuantity, String donorAddress) {
+    private void sendInvoiceEmail(String donorName, String donorPhone, String donorEmail, String donorAddress, String ngoType, String ngoName, String donationType, String donationAmount, String additionalInfo) {
         // Set up email server properties
         Properties props = new Properties();
         props.put("mail.smtp.host", SMTP_HOST);
@@ -122,22 +125,24 @@ public class DonerServlet extends HttpServlet {
             message.setFrom(new InternetAddress(EMAIL_USERNAME));
 
             // Set To: header field
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donorEmail));
 
             // Set Subject: header field
-            message.setSubject("Donation Invoice");
+            message.setSubject("NGO Donation Invoice");
 
             // Set the actual message
             String emailContent = "<html><body>"
-                + "<h3>Donation Invoice</h3>"
+                + "<h3>NGO Donation Invoice</h3>"
                 + "<p>Dear " + donorName + ",</p>"
                 + "<p>Thank you for your generous donation. Here are the details of your donation:</p>"
                 + "<ul>"
-                + "<li><strong>Book Name:</strong> " + bookName + "</li>"
-                + "<li><strong>Book Author:</strong> " + bookAuthor + "</li>"
-                + "<li><strong>Book Published Year:</strong> " + bookYear + "</li>"
-                + "<li><strong>Book Quantity:</strong> " + bookQuantity + "</li>"
+                + "<li><strong>NGO Type:</strong> " + ngoType + "</li>"
+                + "<li><strong>NGO Name:</strong> " + ngoName + "</li>"
+                + "<li><strong>Donation Type:</strong> " + donationType + "</li>"
+                + "<li><strong>Donation Amount:</strong> " + donationAmount + "</li>"
+                + "<li><strong>Phone Number:</strong> " + donorPhone + "</li>"
                 + "<li><strong>Donor Address:</strong> " + donorAddress + "</li>"
+                + "<li><strong>Additional Information:</strong> " + additionalInfo + "</li>"
                 + "</ul>"
                 + "<p>Thank you once again for your support!</p>"
                 + "<p>Best regards,<br>The Charity Team</p>"

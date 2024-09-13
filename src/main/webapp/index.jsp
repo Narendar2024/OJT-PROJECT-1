@@ -37,7 +37,7 @@
             <a href="#">Our Team</a>
           </div>
         </li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="blog.jsp">Blog</a></li>
         <li class="dropdown">
           <a href="#" class="dropbtn">Media Corner</a>
           <div class="dropdown-content">
@@ -238,7 +238,7 @@
           <h4>Safe + Easy Donations</h4>
           <h2>Helping Today. Helping Tomorrow</h2>
           <p>
-            BigHearts is the largest global crowdfunding community connecting
+            Manaakitanaga is the largest global crowdfunding community connecting
             nonprofits, donors, and companies in nearly every country. We help
             nonprofits from Afghanistan to Zimbabwe (and hundreds of places in
             between) access the tools, training, and support they need to be
@@ -440,7 +440,7 @@
             We’re curious, passionate, and committed to helping nonprofits learn
             and grow. Donate now!
           </p>
-          <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button>
+          <button class="donate-btn"><a href="signin.jsp">DONATE NOW </a><span>&#x2665;</span></button>
         </div>
         <div class="footer-section">
           <h3>CONTACTS</h3>

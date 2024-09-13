@@ -208,7 +208,7 @@ body {
 				id="navbarContent">
 				<!-- Centered Links -->
 				<ul class="navbar-nav mx-auto">
-				<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="blog.jsp">Blog</a></li>
 				<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
 					<li class="nav-item"><a class="nav-link active"

@@ -222,17 +222,20 @@ select:focus {
         .form-control {
           font-size: 14px;
         }
+        
+        .navbar-text{
+      	margin-right:10px;
+      }
 
 
     </style>
   </head>
   <body>
-<!-- Navbar -->
+<!-- Nav Bar Start -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container">
-			<!-- Logo -->
-			<a class="navbar-brand d-flex align-items-center" href="#"> <!-- <img src="logo-placeholder.png" alt="Logo" style="width: 40px; height: 40px;"> -->
-				<i class="fa-brands fa-fedora"></i> <span class="ms-2">Manaakitanga</span>
+		<div class="container-fluid">
+			<a class="navbar-brand d-flex align-items-center" href="#"> <i
+				class="fa-brands fa-fedora"></i> <span class="ms-2">Manaakitanga</span>
 			</a>
 
 			<!-- Toggler for mobile view -->
@@ -248,27 +251,42 @@ select:focus {
 				id="navbarContent">
 				<!-- Centered Links -->
 				<ul class="navbar-nav mx-auto">
-				<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="contact.jsp">Contact Us</a></li>
-						
-					<li class="nav-item"><a class="nav-link" href="about_us.jsp">About Us</a></li>
-					
-					
+						aria-current="page" href="home.jsp">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+					<li class="nav-item"><a class="nav-link active" href="contact.jsp">Contact</a>
+					</li>
 				</ul>
 
-				<!-- Search and Donate Now buttons -->
-				<div class="d-flex">
-					<button class="btn btn-outline-primary me-2" type="button">
-						<i class="fa-solid fa-magnifying-glass"></i>
-					</button>
+				<!-- Search, Username, and Logout Button -->
+				<div class="d-flex align-items-center">
+					
 
+					<!-- Username and Logout Button -->
+					<%
+					if (session != null && session.getAttribute("firstname") != null) {
+						String firstname = (String) session.getAttribute("firstname");
+					%>
+					<span class="navbar-text me-3">Hello, <%=firstname%>!
+					</span>
+					<form action="LogoutServlet" method="get" class="d-inline">
+						<button class="btn btn-primary" type="submit">Logout</button>
+					</form>
+					<%
+					} else {
+					%>
+					<span class="navbar-text me-3">Hello, Guest!</span>
+					<%
+					}
+					%>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<!-- nav bar end -->
+	<!-- Nav Bar End -->
+	
     <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center">

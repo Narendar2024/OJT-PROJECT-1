@@ -29,7 +29,7 @@ pageEncoding="UTF-8"%> -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-      /* Basic reset */
+           /* Basic reset */
       body,
       h2,
       form,
@@ -54,32 +54,7 @@ pageEncoding="UTF-8"%> -->
         padding-left: 142px;
         padding-right: 142px;
         width: 100%;
-        background-color: #f8f9fa; /* Adjust background color if needed */
-      }
-
-      /* Navbar Styles */
-      .navbar-brand span {
-        font-weight: bold;
-        font-size: 1.25rem;
-      }
-
-      .navbar-nav .nav-link {
-        font-size: 1rem;
-        font-weight: 500;
-      }
-
-      .navbar .btn-outline-primary {
-        border-color: orange;
-        color: orange;
-      }
-      .navbar .btn-outline-primary:hover {
-        color: white;
-        background-color: orange;
-      }
-
-      .navbar .btn-primary {
-        background-color: orange;
-        border-color: orange;
+        background-color: #f8f9fa;
       }
 
       .container {
@@ -102,9 +77,13 @@ pageEncoding="UTF-8"%> -->
         font-weight: bold;
       }
 
-      input[type="text"],
-      input[type="number"],
-      input[type="email"],
+      .required {
+        color: red;
+      }
+
+      input[type='text'],
+      input[type='number'],
+      input[type='email'],
       textarea {
         padding: 10px;
         margin-bottom: 15px;
@@ -113,7 +92,7 @@ pageEncoding="UTF-8"%> -->
         width: 100%;
       }
 
-      input[type="submit"] {
+      input[type='submit'] {
         background-color: #4caf50;
         color: white;
         border: none;
@@ -123,8 +102,22 @@ pageEncoding="UTF-8"%> -->
         font-size: 16px;
         width: 100%;
       }
+      
+      .btn{
+      	background-color: orange;
+      	border:none;
+      }
+      
+      .btn:hover{
+      	background-color: #FB4700;
+      }
+      
+      
+      .navbar-text{
+      	margin-right:10px;
+      }
 
-      input[type="submit"]:hover {
+      input[type='submit']:hover {
         background-color: #45a049;
       }
 
@@ -137,94 +130,89 @@ pageEncoding="UTF-8"%> -->
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <i class="fa-brands fa-fedora"></i>
-          <span class="ms-2">Manaakitanga</span>
-        </a>
+    <!-- Nav Bar Start -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand d-flex align-items-center" href="#"> <i
+				class="fa-brands fa-fedora"></i> <span class="ms-2">Manaakitanga</span>
+			</a>
 
-        <!-- Toggler for mobile view -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-          aria-controls="navbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+			<!-- Toggler for mobile view -->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarContent"
+				aria-controls="navbarContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-        <!-- Navbar content -->
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarContent"
-        >
-          <!-- Centered Links -->
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-                        <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-            
-              <a class="nav-link active" aria-current="page" href="#">Donation</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.jsp">Contact</a>
-            </li>
-          </ul>
+			<!-- Navbar content -->
+			<div class="collapse navbar-collapse justify-content-between"
+				id="navbarContent">
+				<!-- Centered Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+					<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a>
+					</li>
+				</ul>
 
-          <!-- Search and Donate Now buttons -->
-          <div class="d-flex">
-            <button class="btn btn-outline-primary me-2" type="button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+				<!-- Search, Username, and Logout Button -->
+				<div class="d-flex align-items-center">
+					
 
-    <div class="container">
+					<!-- Username and Logout Button -->
+					<%
+					if (session != null && session.getAttribute("firstname") != null) {
+						String firstname = (String) session.getAttribute("firstname");
+					%>
+					<span class="navbar-text me-3">Hello, <%=firstname%>!
+					</span>
+					<form action="LogoutServlet" method="get" class="d-inline">
+						<button class="btn btn-primary" type="submit">Logout</button>
+					</form>
+					<%
+					} else {
+					%>
+					<span class="navbar-text me-3">Hello, Guest!</span>
+					<%
+					}
+					%>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Nav Bar End -->
+
+
+        <div class="container">
       <h2>Donate a Book</h2>
       <form id="donorForm" action="DonorServlet" method="post">
-        <label for="donor_name">Donor Name:</label>
+        <label for="donor_name">Donor Name <span class="required">*</span></label>
         <input type="text" name="donor_name" id="donor_name" required />
 
-        <label for="book_name">Book Name:</label>
+        <label for="book_name">Book Name <span class="required">*</span></label>
         <input type="text" name="book_name" id="book_name" required />
 
-        <label for="book_author">Book Author:</label>
+        <label for="book_author">Book Author</label>
         <input type="text" name="book_author" id="book_author" required />
 
-        <label for="book_year">Book published Year:</label>
+        <label for="book_year">Book Published Year</label>
         <input type="number" name="book_year" id="book_year" required />
 
-        <label for="book_quantity">Book Quantity:</label>
+        <label for="book_quantity">Book Quantity<span class="required">*</span></label>
         <input type="number" name="book_quantity" id="book_quantity" required />
 
-        <label for="donor_phone_number">Donor Phone Number:</label>
-        <input
-          type="text"
-          name="donor_phone_number"
-          id="donor_phone_number"
-          required
-        />
-               <label for="donor_email">Donor Email:</label>
-        <input
-          type="email"
-          name="donor_email"
-          id="donor_email"
-          required
-        />
+        <label for="donor_phone_number">Donor Phone Number <span class="required">*</span></label>
+        <input type="text" name="donor_phone_number" id="donor_phone_number" required />
 
-        <label for="donor_address">Donor Address:</label>
-        <textarea
-          name="donor_address"
-          id="donor_address"
-          rows="4"
-          required
-        ></textarea>
+        <label for="donor_email">Donor Email <span class="required">*</span></label>
+        <input type="email" name="donor_email" id="donor_email" required />
+
+        <label for="donor_address">Donor Address <span class="required">*</span></label>
+        <textarea name="donor_address" id="donor_address" rows="4" required></textarea>
 
         <input type="submit" value="Donate" />
       </form>
@@ -236,25 +224,22 @@ pageEncoding="UTF-8"%> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-      document
-        .getElementById("donorForm")
-        .addEventListener("submit", function (event) {
-          let phone = document.getElementById("donor_phone_number").value;
-          let email = document.getElementById("donor_email").value;
-          let phonePattern = /^[0-9]{10}$/; // Example pattern for a 10-digit phone number
-          let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
+      document.getElementById("donorForm").addEventListener("submit", function (event) {
+        let phone = document.getElementById("donor_phone_number").value;
+        let email = document.getElementById("donor_email").value;
+        let phonePattern = /^[0-9]{10}$/; // Example pattern for a 10-digit phone number
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
 
-          if (!phonePattern.test(phone)) {
-            alert("Please enter a valid 10-digit phone number.");
-            event.preventDefault(); // Prevent form submission
-          }
+        if (!phonePattern.test(phone)) {
+          alert("Please enter a valid 10-digit phone number.");
+          event.preventDefault(); // Prevent form submission
+        }
 
-          if (!emailPattern.test(email)) {
-            alert("Please enter a valid email address.");
-            event.preventDefault(); // Prevent form submission
-          }
-        });
-    </script>
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email address.");
+          event.preventDefault(); // Prevent form submission
+        }
+      });
     </script>
   </body>
 </html>

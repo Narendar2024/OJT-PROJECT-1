@@ -269,12 +269,13 @@ textarea {
           <!-- Centered Links -->
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
+              <a class="nav-link active" aria-current="page" href="#">Donation</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Donations</a></li>
+            
             <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="contact.jsp">Contact</a>
             </li>
           </ul>
 

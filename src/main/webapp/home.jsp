@@ -9,6 +9,11 @@
 <meta content="Free Website Template" name="keywords">
 <meta content="Free Website Template" name="description">
 
+    <link rel="stylesheet" href="./css/footer.css" />
+
+    <link rel="stylesheet" href="./css/navbar.css" />
+
+
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="icon">
 
@@ -75,8 +80,7 @@
 				id="navbarContent">
 				<!-- Centered Links -->
 				<ul class="navbar-nav mx-auto">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
+					
 					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
@@ -1023,73 +1027,60 @@
 	<!-- Blog End -->
 
 
-	<!-- Footer Start -->
-	<div class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-contact">
-						<h2>Our Head Office</h2>
-						<p>
-							<i class="fa fa-map-marker-alt"></i>123 Street, New York, USA
-						</p>
-						<p>
-							<i class="fa fa-phone-alt"></i>+012 345 67890
-						</p>
-						<p>
-							<i class="fa fa-envelope"></i>info@example.com
-						</p>
-						<div class="footer-social">
-							<a class="btn btn-custom" href=""><i class="fab fa-twitter"></i></a>
-							<a class="btn btn-custom" href=""><i
-								class="fab fa-facebook-f"></i></a> <a class="btn btn-custom" href=""><i
-								class="fab fa-youtube"></i></a> <a class="btn btn-custom" href=""><i
-								class="fab fa-instagram"></i></a> <a class="btn btn-custom" href=""><i
-								class="fab fa-linkedin-in"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-link">
-						<h2>Popular Links</h2>
-						<a href="">About Us</a> <a href="">Contact Us</a> <a href="">Popular
-							Causes</a> <a href="">Upcoming Events</a> <a href="">Latest Blog</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-link">
-						<h2>Useful Links</h2>
-						<a href="">Terms of use</a> <a href="">Privacy policy</a> <a
-							href="">Cookies</a> <a href="">Help</a> <a href="">FQAs</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-newsletter">
-						<h2>Newsletter</h2>
-						<form>
-							<input class="form-control" placeholder="Email goes here">
-							<button class="btn btn-custom">Submit</button>
-							<label>Don't worry, we don't spam!</label>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container copyright">
-			<div class="row">
-				<div class="col-md-6">
-					<p>
-						&copy; <a href="#">Your Site Name</a>, All Right Reserved.
-					</p>
-				</div>
-				<div class="col-md-6">
-					<p>
-						Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	 <!-- Footer -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="name"><i class="fa-solid fa-link"></i>Manaakitanga</h3>
+          <p>
+            We’re curious, passionate, and committed to helping nonprofits learn
+            and grow. Donate now!
+          </p>
+          <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button>
+        </div>
+        <div class="footer-section">
+          <h3>CONTACTS</h3>
+          <p><i class="fas fa-map-marker-alt"></i>Hyderabad, Telangana</p>
+          <p><i class="fas fa-envelope"></i> manaakitanga@mail.com</p>
+          <p><i class="fas fa-phone-alt"></i> +91 9807645123</p>
+          <div class="social-icons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>NONPROFITS</h3>
+          <ul>
+            <li><a href="#">Nonprofit Resources</a></li>
+            <li><a href="#">Corporate Giving Resources</a></li>
+            <li><a href="#">Corporate Gift Cards</a></li>
+            <li><a href="#">CSR Made Simple</a></li>
+            <li><a href="#">Start an Application</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>DONORS</h3>
+          <ul>
+            <li><a href="#">Give or Redeem Gift Cards</a></li>
+            <li><a href="#">Donate in Honor</a></li>
+            <li><a href="#">Project of the Month Club</a></li>
+            <li><a href="#">Start a Fundraiser</a></li>
+            <li><a href="#">Donor Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terms of use | Privacy Environmental Policy</p>
+        <p>
+          Copyright © 2024 BigHearts by <a href="#">WebGeniusLab</a>. All Rights
+          Reserved.
+        </p>
+      </div>
+    
+    </footer>
 	<!-- Footer End -->
 
 	<!-- Back to top button -->
