@@ -36,7 +36,9 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
-
+    
+     <link rel="stylesheet" href="./css/footer.css" />
+ 
     <!-- Custom CSS -->
     <style>
       body {
@@ -340,7 +342,7 @@ select:focus {
                       <p>
                         <span>Email:</span>
                         <a href="mailto:prasadshivasai22@gmail.com"
-                          >prasad@gmail.com</a
+                          >manaakitanga@gmail.com</a
                         >
                       </p>
                     </div>
@@ -487,6 +489,65 @@ select:focus {
         </div>
       </div>
     </section>
+    
+    
+	 <!-- Footer -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="name"><i class="fa-solid fa-link"></i>Manaakitanga</h3>
+          <p>
+            We’re curious, passionate, and committed to helping nonprofits learn
+            and grow. Donate now!
+          </p>
+          <!-- <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button> -->
+        </div>
+        <div class="footer-section">
+          <h3>CONTACTS</h3>
+          <p><i class="fas fa-map-marker-alt"></i>Hyderabad, Telangana</p>
+          <p><i class="fas fa-envelope"></i> manaakitanga@mail.com</p>
+          <p><i class="fas fa-phone-alt"></i> +91 9807645123</p>
+          <div class="social-icons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>NONPROFITS</h3>
+          <ul>
+            <li><a href="#">Nonprofit Resources</a></li>
+            <li><a href="#">Corporate Giving Resources</a></li>
+            <li><a href="#">Corporate Gift Cards</a></li>
+            <li><a href="#">CSR Made Simple</a></li>
+            <li><a href="#">Start an Application</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>DONORS</h3>
+          <ul>
+            <li><a href="#">Give or Redeem Gift Cards</a></li>
+            <li><a href="#">Donate in Honor</a></li>
+            <li><a href="#">Project of the Month Club</a></li>
+            <li><a href="#">Start a Fundraiser</a></li>
+            <li><a href="#">Donor Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terms of use | Privacy Environmental Policy</p>
+        <p>
+          Copyright © 2024 Manaakitanga by <a href="#">TeamWebGenius</a>. All Rights
+          Reserved.
+        </p>
+      </div>
+    
+    </footer>
+	<!-- Footer End -->
+
+    
 
     <!-- jQuery and Bootstrap Bundle -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

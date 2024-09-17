@@ -29,7 +29,7 @@
       <ul class="nav-menu">
         <li><a href="#">Home</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">About Us</a>
+          <a href="about-us.jsp" class="dropbtn">About Us</a>
           <div class="dropdown-content">
             <a href="#">Overview</a>
             <a href="#">Vision & Mission</a>
@@ -257,7 +257,7 @@
       <div class="container">
         <div class="accordion-wrapper">
           <div class="accordion-image">
-            <img src="./images/accordion-image.jpg" alt="Accordion Image" />
+            <img src="./images/accordion-image-1.jpg" alt="Accordion Image" />
           </div>
           <div class="accordion-content-wrapper">
             <h2>Frequently Asked Questions</h2>
@@ -365,7 +365,7 @@
     </section>
     
    <!-- Contact-Section -->
-<section id="contact" class="contact-section py-5">
+<section id="contact" class="contact-section py-5" style="background-color:#e7eaf6">
     <div class="container">
         <div class="contact-container">
             <div class="contact-header text-center mb-4">
@@ -478,7 +478,7 @@
       <div class="footer-bottom">
         <p>Terms of use | Privacy Environmental Policy</p>
         <p>
-          Copyright © 2024 BigHearts by <a href="#">WebGeniusLab</a>. All Rights
+          Copyright © 2024 Manaakitanga by <a href="#">TeamWebGenius</a>. All Rights
           Reserved.
         </p>
       </div>

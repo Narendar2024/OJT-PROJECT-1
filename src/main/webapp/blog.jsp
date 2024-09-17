@@ -151,7 +151,7 @@
       <div class="footer-bottom">
         <p>Terms of use | Privacy Environmental Policy</p>
         <p>
-          Copyright © 2024 BigHearts by <a href="#">WebGeniusLab</a>. All Rights
+          Copyright © 2024 Manaakitanga by <a href="#">TeamWebGenius</a>. All Rights
           Reserved.
         </p>
       </div>

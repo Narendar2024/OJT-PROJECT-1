@@ -114,7 +114,6 @@
 		</div>
 	</nav>
 	<!-- Nav Bar End -->
-	<!-- Nav Bar End -->
 
 
 	<!-- Carousel Start -->
@@ -1037,7 +1036,7 @@
             We’re curious, passionate, and committed to helping nonprofits learn
             and grow. Donate now!
           </p>
-          <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button>
+          <!-- <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button> -->
         </div>
         <div class="footer-section">
           <h3>CONTACTS</h3>
