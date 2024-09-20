@@ -27,14 +27,14 @@
 	<!-- Navbar -->
 	<nav class="navbar">
 		<div class="logo">
-			<a href="sigin.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
+			<a href="signin.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
 		</div>
 		<ul class="nav-menu">
-			<li><a href="#">Home</a></li>
+			<li><a href="index.jsp">Home</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">About Us</a>
 				<div class="dropdown-content">
-					<a href="#">Overview</a> <a href="#">Vision & Mission</a> <a
-						href="#">Milestone & Awards</a> <a href="#">Our Team</a>
+					<a href="#overview-section">Overview</a> <a href="#vision-section">Vision & Mission</a> <a
+						href="#goals-section">Milestone & Awards</a> <a href="#team-section">Our Team</a>
 				</div></li>
 			<li><a href="#">Blog</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Media
@@ -70,7 +70,7 @@
 
 
 	<!-- Overview Section -->
-	<section class="overview-section py-5">
+	<section class="overview-section py-5" id="overview-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-10 text-center">
@@ -98,7 +98,7 @@
 	</section>
 
 	<!-- Vision Section -->
-	<section class="vision-section py-5">
+	<section class="vision-section py-5" id="vision-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-10 text-center">
@@ -122,7 +122,7 @@
 	</section>
 
 	<!-- Mission Section -->
-	<section class="mission-section py-5">
+	<section class="mission-section py-5" id="mission-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-10 text-center">
@@ -151,7 +151,7 @@
 	</section>
 
 	<!-- Values Section -->
-	<section class="goals-section py-5">
+	<section class="goals-section py-5" id="goals-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-10 text-center">
@@ -174,128 +174,103 @@
 			</div>
 		</div>
 	</section>
-	
-	
-	<div class="responsive-container-block outer-container">
-  <div class="responsive-container-block inner-container">
-    <p class="text-blk section-head-text">
-      Meet Our Team
-    </p>
-    <p class="text-blk section-subhead-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-    <div class="responsive-container-block">
-      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-        <div class="team-card">
-          <div class="img-wrapper">
-            <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png">
-          </div>
-          <p class="text-blk name">
-           Dinesh Kumar
-          </p>
-          <p class="text-blk position">
-            Team Leader
-          </p>
-          <div class="social-media-links">
-            <a href="http://www.twitter.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-            </a>
-            <a href="http://www.facebook.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-            </a>
-            <a href="http://www.instagram.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-            </a>
-            <a href="http://www.gmail.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-        <div class="team-card">
-          <div class="img-wrapper">
-            <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
-          </div>
-          <p class="text-blk name">
-            Shiva Sai Prasad
-          </p>
-          <p class="text-blk position">
-            Instructor
-          </p>
-          <div class="social-media-links">
-            <a href="http://www.twitter.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-            </a>
-            <a href="http://www.facebook.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-            </a>
-            <a href="http://www.instagram.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-            </a>
-            <a href="http://www.gmail.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-        <div class="team-card">
-          <div class="img-wrapper">
-            <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png">
-          </div>
-          <p class="text-blk name">
-            Narender
-          </p>
-          <p class="text-blk position">
-            Instructor
-          </p>
-          <div class="social-media-links">
-            <a href="http://www.twitter.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-            </a>
-            <a href="http://www.facebook.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-            </a>
-            <a href="http://www.instagram.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-            </a>
-            <a href="http://www.gmail.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-        <div class="team-card">
-          <div class="img-wrapper">
-            <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
-          </div>
-          <p class="text-blk name">
-            Shivam Viswakarma
-          </p>
-          <p class="text-blk position">
-            Instructor
-          </p>
-          <div class="social-media-links">
-            <a href="http://www.twitter.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-            </a>
-            <a href="http://www.facebook.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-            </a>
-            <a href="http://www.instagram.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-            </a>
-            <a href="http://www.gmail.com/" target="_blank">
-              <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+	<section class="responsive-container-block outer-container team-section" id="team-section">
+		<div class="responsive-container-block inner-container">
+			<p class="text-blk section-head-text">Meet Our Team</p>
+			<p class="text-blk section-subhead-text">Manaakitanga.</p>
+			<div class="responsive-container-block">
+				<div
+					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+					<div class="team-card">
+						<div class="img-wrapper">
+							<img class="team-img"
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png">
+						</div>
+						<p class="text-blk name">Dinesh Kumar</p>
+						<p class="text-blk position">Team Leader</p>
+						<div class="social-media-links">
+							<a href="http://www.twitter.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+							</a> <a href="http://www.facebook.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+							</a> <a href="http://www.instagram.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+							</a> <a href="http://www.gmail.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div
+					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+					<div class="team-card">
+						<div class="img-wrapper">
+							<img class="team-img"
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
+						</div>
+						<p class="text-blk name">Shiva Sai Prasad</p>
+						<p class="text-blk position">Backend</p>
+						<div class="social-media-links">
+							<a href="http://www.twitter.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+							</a> <a href="http://www.facebook.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+							</a> <a href="http://www.instagram.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+							</a> <a href="http://www.gmail.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div
+					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+					<div class="team-card">
+						<div class="img-wrapper">
+							<img class="team-img" src="./images/accordion-image-1.jpg">
+						</div>
+						<p class="text-blk name">Narender</p>
+						<p class="text-blk position">Frontend</p>
+						<div class="social-media-links">
+							<a href="http://www.twitter.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+							</a> <a href="http://www.facebook.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+							</a> <a href="http://www.instagram.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+							</a> <a href="http://www.gmail.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div
+					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+					<div class="team-card">
+						<div class="img-wrapper">
+							<img class="team-img"
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
+						</div>
+						<p class="text-blk name">Shivam Viswakarma</p>
+						<p class="text-blk position">Instructor</p>
+						<div class="social-media-links">
+							<a href="http://www.twitter.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+							</a> <a href="http://www.facebook.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+							</a> <a href="http://www.instagram.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+							</a> <a href="http://www.gmail.com/" target="_blank"> <img
+								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Footer -->
 
@@ -308,7 +283,7 @@
 				<p>We’re curious, passionate, and committed to helping
 					nonprofits learn and grow. Donate now!</p>
 				<button class="donate-btn">
-					<a href="signin">DONATE NOW </a><span>&#x2665;</span>
+					<a href="signin.jsp">DONATE NOW </a><span>&#x2665;</span>
 				</button>
 			</div>
 			<div class="footer-section">

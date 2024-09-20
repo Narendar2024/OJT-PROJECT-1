@@ -131,9 +131,8 @@ input[type="submit"]:hover {
 				id="navbarContent">
 				<ul class="navbar-nav mx-auto">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
+						aria-current="page" href="home.jsp">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
 				</ul>
 				<div class="d-flex align-items-center">
@@ -186,7 +185,13 @@ input[type="submit"]:hover {
 
 			<label for="donor_phone">Donor Phone Number <span
 				class="required">*</span></label> <input type="text" id="donor_phone"
-				name="donor_phone" required> <label for="pin_code">Pin
+				name="donor_phone" required>
+				
+				<br> <br> <label for="donor_address">Donor Address
+				<span class="required">*</span>
+			</label>
+			<textarea id="donor_address" name="donor_address" rows="4" required></textarea>
+				 <label for="pin_code">Pin
 				Code <span class="required">*</span>
 			</label> <input type="text" id="pin_code" name="pin_code" required>
 			<button type="button" onclick="fetchNearestPostOffice()">Find
@@ -204,10 +209,6 @@ input[type="submit"]:hover {
 					<option value="">Select a courier service</option>
 				</select>
 			</div>
-			<br> <br> <label for="donor_address">Donor Address
-				<span class="required">*</span>
-			</label>
-			<textarea id="donor_address" name="donor_address" rows="4" required></textarea>
 
 			<input type="submit" value="Donate Now">
 		</form>
@@ -286,13 +287,34 @@ input[type="submit"]:hover {
 		function fetchNearestPostOffice() {
 			var pinCode = document.getElementById('pin_code').value;
 			var courierServices = {
-				"500001" : [ "India Post", "Blue Dart", "DTDC", "FedEx" ],
-				"500002" : [ "DTDC", "India Post", "Delhivery" ],
-				"500044" : [ "Blue Dart", "India Post", "Gati" ],
-				"500072" : [ "Aramex", "India Post", "FedEx", "Blue Dart" ],
-				"502032" : [ "India Post", "DTDC", "Blue Dart" ]
-			// Add more Telangana pincodes and corresponding courier services here
-			};
+					  "500001": ["India Post", "Blue Dart", "DTDC", "FedEx"],
+					  "500002": ["DTDC", "India Post", "Delhivery"],
+					  "500044": ["Blue Dart", "India Post", "Gati"],
+					  "500072": ["Aramex", "India Post", "FedEx", "Blue Dart"],
+					  "502032": ["India Post", "DTDC", "Blue Dart"],
+					  "500016": ["Omni Express", "India Post", "DTDC"],
+					  "500003": ["Delhivery", "India Post", "FedEx"],
+					  "500004": ["Blue Dart", "DTDC", "Gati"],
+					  "500005": ["Aramex", "India Post", "Omni Express"],
+					  "500006": ["Delhivery", "DTDC", "Blue Dart"],
+					  "500007": ["Gati", "India Post", "DTDC"],
+					  "500008": ["FedEx", "Blue Dart", "Delhivery"],
+					  "500009": ["India Post", "DTDC", "Omni Express"],
+					  "500010": ["Blue Dart", "Delhivery", "FedEx"],
+					  "500011": ["Aramex", "India Post", "DTDC"],
+					  "500012": ["Gati", "Blue Dart", "FedEx"],
+					  "500013": ["India Post", "DTDC", "Omni Express"],
+					  "500014": ["Delhivery", "India Post", "Blue Dart"],
+					  "500015": ["FedEx", "Gati", "DTDC"],
+					  "500017": ["India Post", "Blue Dart", "Aramex"],
+					  "500018": ["DTDC", "Delhivery", "Omni Express"],
+					  "500019": ["FedEx", "India Post", "Gati"],
+					  "500020": ["Blue Dart", "DTDC", "Delhivery"],
+					  "500021": ["India Post", "Omni Express", "FedEx"],
+					  "500022": ["Delhivery", "Blue Dart", "Gati"],
+					  "500023": ["India Post", "FedEx", "Aramex"]
+					};
+
 
 			var couriers = courierServices[pinCode];
 			var postOfficeSelect = document.getElementById('post_office');

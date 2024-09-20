@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.HttpSession"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +10,9 @@
 <meta content="Free Website Template" name="keywords">
 <meta content="Free Website Template" name="description">
 
-    <link rel="stylesheet" href="./css/footer.css" />
+<link rel="stylesheet" href="./css/footer.css" />
 
-    <link rel="stylesheet" href="./css/navbar.css" />
+<link rel="stylesheet" href="./css/navbar.css" />
 
 
 <!-- Favicon -->
@@ -56,9 +57,49 @@
 
 </head>
 <style>
+#successMessage {
+	color: green;
+	background-color: #e7f9e7;
+	padding: 10px;
+	border: 1px solid green;
+	border-radius: 5px;
+	width: fit-content;
+	margin: 10px auto;
+	text-align: center;
+	font-weight: bold;
+}
+
+#errorMessage {
+	color: red;
+	background-color: #f8d7da;
+	padding: 10px;
+	border: 1px solid red;
+	border-radius: 5px;
+	width: fit-content;
+	margin: 10px auto;
+	text-align: center;
+	font-weight: bold;
+}
 </style>
 
 <body>
+
+	<%
+	// Retrieve the session
+	//HttpSession session = request.getSession(false);
+
+	// Check if there is a login success message
+	if (session != null && session.getAttribute("loginSuccessMessage") != null) {
+		String successMessage = (String) session.getAttribute("loginSuccessMessage");
+	%>
+	<p id="successMessage" style="color: green;"><%=successMessage%></p>
+	<%
+	// Clear the message from the session after displaying it
+	session.removeAttribute("loginSuccessMessage");
+	}
+	%>
+
+
 
 	<!-- Nav Bar Start -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -80,18 +121,13 @@
 				id="navbarContent">
 				<!-- Centered Links -->
 				<ul class="navbar-nav mx-auto">
-					
-					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
 				</ul>
 
 				<!-- Search, Username, and Logout Button -->
 				<div class="d-flex align-items-center">
-					
-
 					<!-- Username and Logout Button -->
 					<%
 					if (session != null && session.getAttribute("firstname") != null) {
@@ -494,10 +530,10 @@
 						<p>We deliver crucial food aid to combat hunger and ensure
 							everyone gets the nutrition they need.</p>
 					</div>
-					<div class="causes-btn">
+					<!-- <div class="causes-btn">
 						<a class="btn btn-custom">Learn More</a> <a class="btn btn-custom">Donate
 							Now</a>
-					</div>
+					</div> -->
 				</div>
 				<div class="causes-item">
 					<div class="causes-img">
@@ -512,10 +548,10 @@
 						</div>
 						<div class="progress-text">
 							<p>
-								<strong>Raised:</strong> $70000
+								<strong>Raised:</strong> ₹70000
 							</p>
 							<p>
-								<strong>Goal:</strong> $100000
+								<strong>Goal:</strong> ₹100000
 							</p>
 						</div>
 					</div>
@@ -524,10 +560,10 @@
 						<p>We support and collaborate with NGOs to amplify impact and
 							drive positive change.</p>
 					</div>
-					<div class="causes-btn">
+					<!-- <div class="causes-btn">
 						<a class="btn btn-custom">Learn More</a> <a class="btn btn-custom">Donate
 							Now</a>
-					</div>
+					</div>-->
 				</div>
 				<div class="causes-item">
 					<div class="causes-img">
@@ -542,10 +578,10 @@
 						</div>
 						<div class="progress-text">
 							<p>
-								<strong>Raised:</strong> $85000
+								<strong>Raised:</strong> ₹85000
 							</p>
 							<p>
-								<strong>Goal:</strong> $100000
+								<strong>Goal:</strong> ₹100000
 							</p>
 						</div>
 					</div>
@@ -554,10 +590,10 @@
 						<p>We support children and families with essential services
 							and resources for a better quality of life.</p>
 					</div>
-					<div class="causes-btn">
+					<!-- <div class="causes-btn">
 						<a class="btn btn-custom">Learn More</a> <a class="btn btn-custom">Donate
 							Now</a>
-					</div>
+					</div>-->
 				</div>
 				<div class="causes-item">
 					<div class="causes-img">
@@ -572,10 +608,10 @@
 						</div>
 						<div class="progress-text">
 							<p>
-								<strong>Raised:</strong> $73000
+								<strong>Raised:</strong> ₹73000
 							</p>
 							<p>
-								<strong>Goal:</strong> $100000
+								<strong>Goal:</strong> ₹100000
 							</p>
 						</div>
 					</div>
@@ -584,10 +620,10 @@
 						<p>We provide educational resources and support to enhance
 							learning opportunities for all.</p>
 					</div>
-					<div class="causes-btn">
+					<!-- <div class="causes-btn">
 						<a class="btn btn-custom">Learn More</a> <a class="btn btn-custom">Donate
 							Now</a>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
@@ -957,15 +993,16 @@
 				<div class="col-lg-4">
 					<div class="blog-item">
 						<div class="blog-img">
-							<img src="img/blog-1.jpg" alt="Image">
+							<img src="img/blog-3.jpg" alt="Image">
 						</div>
 						<div class="blog-text">
 							<h3>
-								<a href="#">Lorem ipsum dolor sit</a>
+								<a href="#">Financial Literacy Program</a>
 							</h3>
-							<p>Lorem ipsum dolor sit amet elit. Neca pretim miura bitur
-								facili ornare velit non vulpte liqum metus tortor</p>
+							<p>Financial literacy is the foundation of any financial
+								relationship, and it is a lifelong process of learning.</p>
 						</div>
+						<!-- 
 						<div class="blog-meta">
 							<p>
 								<i class="fa fa-user"></i><a href="">Admin</a>
@@ -974,6 +1011,7 @@
 								<i class="fa fa-comments"></i><a href="">15 Comments</a>
 							</p>
 						</div>
+						 -->
 					</div>
 				</div>
 				<div class="col-lg-4">
@@ -983,11 +1021,12 @@
 						</div>
 						<div class="blog-text">
 							<h3>
-								<a href="#">Lorem ipsum dolor sit</a>
+								<a href="#">Book for Purpose</a>
 							</h3>
-							<p>Lorem ipsum dolor sit amet elit. Neca pretim miura bitur
-								facili ornare velit non vulpte liqum metus tortor</p>
+							<p>Manaakitanga has contemplated and noted that the books
+								provided to students</p>
 						</div>
+						<!-- 
 						<div class="blog-meta">
 							<p>
 								<i class="fa fa-user"></i><a href="">Admin</a>
@@ -996,20 +1035,22 @@
 								<i class="fa fa-comments"></i><a href="">15 Comments</a>
 							</p>
 						</div>
+						 -->
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="blog-item">
 						<div class="blog-img">
-							<img src="img/blog-3.jpg" alt="Image">
+							<img src="img/blog-1.jpg" alt="Image">
 						</div>
 						<div class="blog-text">
 							<h3>
-								<a href="#">Lorem ipsum dolor sit</a>
+								<a href="#">Education Programs</a>
 							</h3>
-							<p>Lorem ipsum dolor sit amet elit. Neca pretim miura bitur
-								facili ornare velit non vulpte liqum metus tortor</p>
+							<p>We provide educational resources and support to enhance
+								learning opportunities for all.</p>
 						</div>
+						<!-- 
 						<div class="blog-meta">
 							<p>
 								<i class="fa fa-user"></i><a href="">Admin</a>
@@ -1018,6 +1059,7 @@
 								<i class="fa fa-comments"></i><a href="">15 Comments</a>
 							</p>
 						</div>
+						 -->
 					</div>
 				</div>
 			</div>
@@ -1026,60 +1068,64 @@
 	<!-- Blog End -->
 
 
-	 <!-- Footer -->
+	<!-- Footer -->
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3 class="name"><i class="fa-solid fa-link"></i>Manaakitanga</h3>
-          <p>
-            We’re curious, passionate, and committed to helping nonprofits learn
-            and grow. Donate now!
-          </p>
-          <!-- <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button> -->
-        </div>
-        <div class="footer-section">
-          <h3>CONTACTS</h3>
-          <p><i class="fas fa-map-marker-alt"></i>Hyderabad, Telangana</p>
-          <p><i class="fas fa-envelope"></i> manaakitanga@mail.com</p>
-          <p><i class="fas fa-phone-alt"></i> +91 9807645123</p>
-          <div class="social-icons">
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-pinterest"></i>
-            <i class="fab fa-instagram"></i>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>NONPROFITS</h3>
-          <ul>
-            <li><a href="#">Nonprofit Resources</a></li>
-            <li><a href="#">Corporate Giving Resources</a></li>
-            <li><a href="#">Corporate Gift Cards</a></li>
-            <li><a href="#">CSR Made Simple</a></li>
-            <li><a href="#">Start an Application</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>DONORS</h3>
-          <ul>
-            <li><a href="#">Give or Redeem Gift Cards</a></li>
-            <li><a href="#">Donate in Honor</a></li>
-            <li><a href="#">Project of the Month Club</a></li>
-            <li><a href="#">Start a Fundraiser</a></li>
-            <li><a href="#">Donor Resources</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>Terms of use | Privacy Environmental Policy</p>
-        <p>
-          Copyright © 2024 BigHearts by <a href="#">WebGeniusLab</a>. All Rights
-          Reserved.
-        </p>
-      </div>
-    
-    </footer>
+	<footer>
+		<div class="footer-container">
+			<div class="footer-section">
+				<h3 class="name">
+					<i class="fa-solid fa-link"></i>Manaakitanga
+				</h3>
+				<p>We’re curious, passionate, and committed to helping
+					nonprofits learn and grow. Donate now!</p>
+				<!-- <button class="donate-btn"><a href="signin">DONATE NOW </a><span>&#x2665;</span></button> -->
+			</div>
+			<div class="footer-section">
+				<h3>CONTACTS</h3>
+				<p>
+					<i class="fas fa-map-marker-alt"></i>Hyderabad, Telangana
+				</p>
+				<p>
+					<i class="fas fa-envelope"></i> manaakitanga@mail.com
+				</p>
+				<p>
+					<i class="fas fa-phone-alt"></i> +91 9807645123
+				</p>
+				<div class="social-icons">
+					<i class="fab fa-twitter"></i> <i class="fab fa-facebook-f"></i> <i
+						class="fab fa-pinterest"></i> <i class="fab fa-instagram"></i>
+				</div>
+			</div>
+			<div class="footer-section">
+				<h3>NONPROFITS</h3>
+				<ul>
+					<li><a href="#">Nonprofit Resources</a></li>
+					<li><a href="#">Corporate Giving Resources</a></li>
+					<li><a href="#">Corporate Gift Cards</a></li>
+					<li><a href="#">CSR Made Simple</a></li>
+					<li><a href="#">Start an Application</a></li>
+				</ul>
+			</div>
+			<div class="footer-section">
+				<h3>DONORS</h3>
+				<ul>
+					<li><a href="#">Give or Redeem Gift Cards</a></li>
+					<li><a href="#">Donate in Honor</a></li>
+					<li><a href="#">Project of the Month Club</a></li>
+					<li><a href="#">Start a Fundraiser</a></li>
+					<li><a href="#">Donor Resources</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>Terms of use | Privacy Environmental Policy</p>
+			<p>
+				Copyright © 2024 BigHearts by <a href="#">TeamWebGenius</a>. All
+				Rights Reserved.
+			</p>
+		</div>
+
+	</footer>
 	<!-- Footer End -->
 
 	<!-- Back to top button -->
@@ -1122,6 +1168,18 @@
             });	
         });
     });
+</script>
+	<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var successMessageDiv = document.getElementById('successMessage');
+        if (successMessageDiv) {
+            console.log("Hiding success message after 5 seconds.");
+            successMessageDiv.style.display = 'none';
+        }
+    }, 3000);
+});
+
 </script>
 </body>
 </html>
