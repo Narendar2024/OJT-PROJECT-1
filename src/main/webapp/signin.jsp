@@ -78,7 +78,7 @@ h2 {
 						of Empowerment</a>
 				</div></li>
 			<li><a href="#">Gallery</a></li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="index.jsp#contact">Contact Us</a></li>
 			<li><a href="signin.jsp" class="donate-btn">Donate</a></li>
 		</ul>
 		<div class="hamburger-menu">

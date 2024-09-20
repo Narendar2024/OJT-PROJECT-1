@@ -179,30 +179,30 @@
 		<div class="helping-container">
 			<div class="image-side">
 				<img src="./images/helping-section-image.png"
-					alt="Children in Africa" />
+					alt="Children in India" />
 				<div class="image-overlay">
 					<img src="./images/helping-section-overlay.png" alt="Overlay" />
 				</div>
 				<div class="inner-text">
 					<h3>
-						255 300+ Children in <br />Africa Need School
+						2500+ lakhs Children in <br />India Need Education
 					</h3>
-					<a href="#" class="volunteer-btn">Become a Volunteer</a>
+					<!-- <a href="#" class="volunteer-btn">Become a Volunteer</a> -->
 				</div>
 			</div>
 			<div class="text-side">
 				<h4>Safe + Easy Donations</h4>
-				<h2>Helping Today. Helping Tomorrow</h2>
-				<p>Manaakitanaga is the largest global crowdfunding community
-					connecting nonprofits, donors, and companies in nearly every
-					country. We help nonprofits from Afghanistan to Zimbabwe (and
-					hundreds of places in between) access the tools, training, and
-					support they need to be more effective and make our world a better
-					place.</p>
-				<div class="action-buttons">
-					<a href="#" class="learn-more-btn">Learn More</a> <a href="#"
-						class="volunteers-btn">Our Volunteers</a>
-				</div>
+				<h2>Helping Today. Empowering Tomorrow</h2>
+				<p>Manaakitanga is dedicated to helping underprivileged
+					communities in India access quality education, healthcare, and
+					basic amenities. From the bustling cities to the rural villages, we
+					connect donors with nonprofits across the country. Our mission is
+					to support the next generation by providing the tools, training,
+					and resources needed to build a brighter future for all.</p>
+				<!-- <div class="action-buttons">
+				<a href="#" class="learn-more-btn">Learn More</a> 
+				<a href="#" class="volunteers-btn">Our Volunteers</a>
+			</div> -->
 			</div>
 		</div>
 	</section>
@@ -219,9 +219,8 @@
 					<div class="accordion">
 						<div class="accordion-item">
 							<button id="accordion-button-1" aria-expanded="false">
-								<span class="accordion-title">1.
-									Why are donations essential for nonprofits?</span> <span class="icon"
-									aria-hidden="true"></span>
+								<span class="accordion-title">1. Why are donations
+									essential for nonprofits?</span> <span class="icon" aria-hidden="true"></span>
 							</button>
 							<div class="accordion-content">
 								<p>Donations provide the necessary funds that allow
@@ -235,9 +234,8 @@
 						</div>
 						<div class="accordion-item">
 							<button id="accordion-button-2" aria-expanded="false">
-								<span class="accordion-title">2.
-									How does my donation make a difference?</span> <span class="icon"
-									aria-hidden="true"></span>
+								<span class="accordion-title">2. How does my donation
+									make a difference?</span> <span class="icon" aria-hidden="true"></span>
 							</button>
 							<div class="accordion-content">
 								<p>Every donation, no matter how small, contributes to real
@@ -250,9 +248,9 @@
 						</div>
 						<div class="accordion-item">
 							<button id="accordion-button-3" aria-expanded="false">
-								<span class="accordion-title">3.
-									What percentage of my donation goes directly to the cause?</span> <span
-									class="icon" aria-hidden="true"></span>
+								<span class="accordion-title">3. What percentage of my
+									donation goes directly to the cause?</span> <span class="icon"
+									aria-hidden="true"></span>
 							</button>
 							<div class="accordion-content">
 								<p>Reputable nonprofit organizations strive to ensure that a
@@ -266,9 +264,9 @@
 						</div>
 						<div class="accordion-item">
 							<button id="accordion-button-4" aria-expanded="false">
-								<span class="accordion-title">4.
-									Why should I donate regularly instead of one-time?</span> <span
-									class="icon" aria-hidden="true"></span>
+								<span class="accordion-title">4. Why should I donate
+									regularly instead of one-time?</span> <span class="icon"
+									aria-hidden="true"></span>
 							</button>
 							<div class="accordion-content">
 								<p>Regular donations provide nonprofits with a stable and
@@ -282,9 +280,8 @@
 						</div>
 						<div class="accordion-item">
 							<button id="accordion-button-5" aria-expanded="false">
-								<span class="accordion-title">5.
-									Can small donations really make a difference?</span> <span
-									class="icon" aria-hidden="true"></span>
+								<span class="accordion-title">5. Can small donations
+									really make a difference?</span> <span class="icon" aria-hidden="true"></span>
 							</button>
 							<div class="accordion-content">
 								<p>Absolutely! Small donations, when pooled together, can

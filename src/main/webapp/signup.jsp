@@ -67,10 +67,10 @@ h2 {
 	<!-- Navbar -->
 	<nav class="navbar">
 		<div class="logo">
-			<a href="sigin.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
+			<a href="index.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
 		</div>
 		<ul class="nav-menu">
-			<li><a href="#">Home</a></li>
+			<li><a href="index.jsp">Home</a></li>
 			<li class="dropdown"><a href="about-us.jsp" class="dropbtn">About
 					Us</a>
 				<div class="dropdown-content">
@@ -85,7 +85,7 @@ h2 {
 						of Empowerment</a>
 				</div></li>
 			<li><a href="#">Gallery</a></li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="index.jsp#contact">Contact Us</a></li>
 			<li><a href="signin.jsp" class="donate-btn">Donate</a></li>
 		</ul>
 		<div class="hamburger-menu">
