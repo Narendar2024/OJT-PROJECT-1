@@ -27,7 +27,7 @@
 	<!-- Navbar -->
 	<nav class="navbar">
 		<div class="logo">
-			<a href="signin.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
+			<a href="index.jsp"><i class="fa-solid fa-link"></i>Manaakitanga</a>
 		</div>
 		<ul class="nav-menu">
 			<li><a href="index.jsp">Home</a></li>
@@ -36,15 +36,15 @@
 					<a href="#overview-section">Overview</a> <a href="#vision-section">Vision & Mission</a> <a
 						href="#goals-section">Milestone & Awards</a> <a href="#team-section">Our Team</a>
 				</div></li>
-			<li><a href="#">Blog</a></li>
+			<li><a href="blog.jsp">Blog</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Media
 					Corner</a>
 				<div class="dropdown-content">
 					<a href="#">News Letters</a> <a href="#">Events</a> <a href="#">Story
 						of Empowerment</a>
 				</div></li>
-			<li><a href="#">Gallery</a></li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="gallery.jsp">Gallery</a></li>
+			<li><a href="index.jsp#contact">Contact Us</a></li>
 			<li><a href="signin.jsp" class="donate-btn">Donate</a></li>
 		</ul>
 		<div class="hamburger-menu">
