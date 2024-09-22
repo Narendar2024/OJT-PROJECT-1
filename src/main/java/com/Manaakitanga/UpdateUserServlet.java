@@ -2,11 +2,11 @@ package com.Manaakitanga;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/UpdateUserServlet")
 public class UpdateUserServlet extends HttpServlet {
@@ -23,11 +23,6 @@ public class UpdateUserServlet extends HttpServlet {
 		String location = request.getParameter("location");
 
 		System.out.println("Received update for ID: " + id);
-		System.out.println("First Name: " + firstname);
-		System.out.println("Last Name: " + lastname);
-		System.out.println("Email: " + email);
-		System.out.println("Mobile: " + mobile);
-		System.out.println("Location: " + location);
 
 		try {
 			DBUtil.updateUser(id, firstname, lastname, email, mobile, location);
@@ -35,6 +30,9 @@ public class UpdateUserServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			response.sendRedirect("editUser.jsp?id=" + id + "&error=updateFailed");
+		} catch (Exception e) {
+			e.printStackTrace(); // Catch any unexpected exceptions
+			response.sendRedirect("editUser.jsp?id=" + id + "&error=unexpectedError");
 		}
 	}
 

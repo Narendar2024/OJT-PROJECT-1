@@ -37,7 +37,8 @@
 	if (user != null) {
 	%>
 
-	<form action="${pageContext.request.contextPath}/UpdateUserServlet" method="post">
+	<form action="<%=request.getContextPath()%>/UpdateUserServlet"
+		method="post">
 		<input type="hidden" name="id" value="<%=user.getId()%>" />
 		<div class="form-group">
 			<label for="firstname">First Name:</label> <input type="text"

@@ -10,20 +10,33 @@ import java.util.ArrayList;
 public class DBUtil {
 
 	// Method to establish a connection to the database
-	public static Connection getConnection() throws Exception {
+//	public static Connection getConnection() throws Exception {
+//		String url = "jdbc:mysql://localhost:3306/manaakitanga"; // Database URL
+//		String username = "root"; // MySQL username
+//		String password = "root"; // MySQL password
+//		Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL JDBC driver
+//		Connection con = DriverManager.getConnection(url, username, password);
+//
+//		// Test the connection
+//		if (con != null) {
+//			System.out.println("Connection successful!");
+//		} else {
+//			System.out.println("Connection failed!");
+//		}
+//		return con;
+//	}
+
+	public static Connection getConnection() throws SQLException {
 		String url = "jdbc:mysql://localhost:3306/manaakitanga"; // Database URL
 		String username = "root"; // MySQL username
 		String password = "root"; // MySQL password
-		Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL JDBC driver
-		Connection con = DriverManager.getConnection(url, username, password);
-
-		// Test the connection
-		if (con != null) {
-			System.out.println("Connection successful!");
-		} else {
-			System.out.println("Connection failed!");
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL JDBC driver
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			throw new SQLException("JDBC Driver not found.", e);
 		}
-		return con;
+		return DriverManager.getConnection(url, username, password);
 	}
 
 	// Method to save a new user to the database
@@ -150,15 +163,22 @@ public class DBUtil {
 	// Method to update user details
 	public static void updateUser(int id, String firstname, String lastname, String email, String mobile,
 			String location) throws SQLException {
-		String query = "UPDATE users SET firstname=?, lastname=?, email=?, mobile=?, location=? WHERE id=?";
-		try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
+		// Database logic here
+		try (Connection conn = getConnection();
+				PreparedStatement stmt = conn.prepareStatement(
+						"UPDATE users SET firstname = ?, lastname = ?, email = ?, mobile = ?, location = ? WHERE id = ?")) {
+
 			stmt.setString(1, firstname);
 			stmt.setString(2, lastname);
 			stmt.setString(3, email);
 			stmt.setString(4, mobile);
 			stmt.setString(5, location);
 			stmt.setInt(6, id);
+
 			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e; // Make sure the SQLException is thrown back to the servlet
 		}
 	}
 
