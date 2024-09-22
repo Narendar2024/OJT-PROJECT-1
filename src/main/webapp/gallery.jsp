@@ -38,7 +38,7 @@
 					<a href="#">News Letters</a> <a href="#">Events</a> <a href="#">Story
 						of Empowerment</a>
 				</div></li>
-			<li><a href="#">Gallery</a></li>
+			<li><a href="gallery.jsp">Gallery</a></li>
 			<li><a href="index.jsp#contact">Contact Us</a></li>
 			<li><a href="signin.jsp" class="donate-btn">Donate</a></li>
 		</ul>

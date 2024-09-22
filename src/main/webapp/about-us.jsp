@@ -15,12 +15,10 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-
 
 </head>
 <body>
@@ -33,8 +31,9 @@
 			<li><a href="index.jsp">Home</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">About Us</a>
 				<div class="dropdown-content">
-					<a href="#overview-section">Overview</a> <a href="#vision-section">Vision & Mission</a> <a
-						href="#goals-section">Milestone & Awards</a> <a href="#team-section">Our Team</a>
+					<a href="#overview-section">Overview</a> <a href="#vision-section">Vision
+						& Mission</a> <a href="#goals-section">Milestone & Awards</a> <a
+						href="#team-section">Our Team</a>
 				</div></li>
 			<li><a href="blog.jsp">Blog</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Media
@@ -54,19 +53,15 @@
 		</div>
 	</nav>
 
-
-
 	<!-- Hero Section -->
-	<section class="hero">
-		<div class="hero-overlay">
-			<div class="hero-content">
-				<h1 class="blog-title">About Us</h1>
-				<nav class="breadcrumb">
-					<a href="index.jsp">Home</a> > <span>About Us</span>
-				</nav>
-			</div>
+	<div class="hero-section">
+		<div class="overlay">
+			<h1>About Us</h1>
+			<p>
+				<a href="index.jsp">Home</a> &gt; <strong>About Us</strong>
+			</p>
 		</div>
-	</section>
+	</div>
 
 
 	<!-- Overview Section -->
@@ -163,10 +158,21 @@
 							<img src="./assets/values-icon.png" alt="Goals Icon" />
 						</div>
 						<div class="goals-text">
-							<p><i class="fa-solid fa-check"></i>Empower youth for a stronger society through education, encouragement, and employment.</p>
-							<p><i class="fa-solid fa-check"></i>Work on various aspects impacting children to build an empowered future generation.</p>
-							<p><i class="fa-solid fa-check"></i>Empowering Citizens to live with dignity and get equal rights for them in society.</p> 
-							<p><i class="fa-solid fa-check"></i>Creating a healthy, sustainable and Safe environment for citizens to live.
+							<p>
+								<i class="fa-solid fa-check"></i>Empower youth for a stronger
+								society through education, encouragement, and employment.
+							</p>
+							<p>
+								<i class="fa-solid fa-check"></i>Work on various aspects
+								impacting children to build an empowered future generation.
+							</p>
+							<p>
+								<i class="fa-solid fa-check"></i>Empowering Citizens to live
+								with dignity and get equal rights for them in society.
+							</p>
+							<p>
+								<i class="fa-solid fa-check"></i>Creating a healthy, sustainable
+								and Safe environment for citizens to live.
 							</p>
 						</div>
 					</div>
@@ -176,102 +182,37 @@
 	</section>
 
 
-	<section class="responsive-container-block outer-container team-section" id="team-section">
-		<div class="responsive-container-block inner-container">
-			<p class="text-blk section-head-text">Meet Our Team</p>
-			<p class="text-blk section-subhead-text">Manaakitanga.</p>
-			<div class="responsive-container-block">
-				<div
-					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-					<div class="team-card">
-						<div class="img-wrapper">
-							<img class="team-img"
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png">
-						</div>
-						<p class="text-blk name">Dinesh Kumar</p>
-						<p class="text-blk position">Team Leader</p>
-						<div class="social-media-links">
-							<a href="http://www.twitter.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-							</a> <a href="http://www.facebook.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-							</a> <a href="http://www.instagram.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-							</a> <a href="http://www.gmail.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div
-					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-					<div class="team-card">
-						<div class="img-wrapper">
-							<img class="team-img"
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
-						</div>
-						<p class="text-blk name">Shiva Sai Prasad</p>
-						<p class="text-blk position">Backend</p>
-						<div class="social-media-links">
-							<a href="http://www.twitter.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-							</a> <a href="http://www.facebook.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-							</a> <a href="http://www.instagram.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-							</a> <a href="http://www.gmail.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div
-					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-					<div class="team-card">
-						<div class="img-wrapper">
-							<img class="team-img" src="./images/accordion-image-1.jpg">
-						</div>
-						<p class="text-blk name">Narender</p>
-						<p class="text-blk position">Frontend</p>
-						<div class="social-media-links">
-							<a href="http://www.twitter.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-							</a> <a href="http://www.facebook.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-							</a> <a href="http://www.instagram.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-							</a> <a href="http://www.gmail.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div
-					class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-					<div class="team-card">
-						<div class="img-wrapper">
-							<img class="team-img"
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
-						</div>
-						<p class="text-blk name">Shivam Viswakarma</p>
-						<p class="text-blk position">Instructor</p>
-						<div class="social-media-links">
-							<a href="http://www.twitter.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-							</a> <a href="http://www.facebook.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-							</a> <a href="http://www.instagram.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-							</a> <a href="http://www.gmail.com/" target="_blank"> <img
-								src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
-							</a>
-						</div>
-					</div>
-				</div>
+	<!-- Meet Our Team Section -->
+
+	<div class="about-us" id="meet-our-team">
+		<h2>Meet Our Team</h2>
+		<div class="team-container">
+			<div class="team-member">
+				<img src="./team-images/Narender.jpg" alt="Member 1">
+				<h3>John Doe</h3>
+				<p>Project Manager - Oversees all aspects of the project,
+					ensuring timelines and deliverables are met.</p>
+			</div>
+			<div class="team-member">
+				<img src="./team-images/ShivaPrasad2.jpg" alt="Member 2">
+				<h3>Jane Smith</h3>
+				<p>Lead Developer - Specializes in back-end development and
+					technical architecture design.</p>
+			</div>
+			<div class="team-member">
+				<img src="./team-images/Narender.jpg" alt="Member 3">
+				<h3>Emily Johnson</h3>
+				<p>UI/UX Designer - Focuses on creating user-friendly designs
+					and ensuring a smooth user experience.</p>
+			</div>
+			<div class="team-member">
+				<img src="./team-images/Narender.jpg" alt="Member 4">
+				<h3>Michael Brown</h3>
+				<p>Front-End Developer - Implements responsive designs and
+					interactive features for the web application.</p>
 			</div>
 		</div>
-	</section>
-
+	</div>
 	<!-- Footer -->
 
 	<footer>

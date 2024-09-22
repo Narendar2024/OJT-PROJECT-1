@@ -19,9 +19,33 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
-
+<style>
+#responseMessage {
+	color: green;
+	background-color: #e7f9e7;
+	padding: 10px;
+	border: 1px solid green;
+	border-radius: 5px;
+	width: fit-content;
+	margin: 10px auto;
+	text-align: center;
+	font-weight: bold;
+}
+</style>
 </head>
 <body>
+	<%
+	String responseMessage = (String) session.getAttribute("responseMessage");
+	if (responseMessage != null) {
+	%>
+	<div id="responseMessage" class="alert alert-info" role="alert">
+		<%=responseMessage%>
+	</div>
+	<%
+	session.removeAttribute("responseMessage"); // Clear message after displaying
+	}
+	%>
+
 	<!-- Navbar -->
 	<nav class="navbar">
 		<div class="logo">
@@ -32,8 +56,12 @@
 			<li class="dropdown"><a href="about-us.jsp" class="dropbtn">About
 					Us</a>
 				<div class="dropdown-content">
-					<a href="#">Overview</a> <a href="#">Vision & Mission</a> <a
-						href="#">Milestone & Awards</a> <a href="#">Our Team</a>
+					<a href="about-us.jsp#">Overview</a> <a
+						href="about-us.jsp#vision-section">Vision & Mission</a><a
+						href="about-us.jsp#goals-section">Goals</a> <a
+						href="about-us.jsp#mission-section">Milestone & Awards</a> <a
+						href="about-us.jsp#meet-our-team">Our Team</a>
+
 				</div></li>
 			<li><a href="blog.jsp">Blog</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Media
@@ -308,7 +336,7 @@
 					<h2>Get in Touch</h2>
 				</div>
 
-				<form action="contact.jsp" method="POST">
+				<form action="QueryServlet" method="POST">
 					<div class="row">
 						<!-- Full Name -->
 						<div class="col-md-6 mb-3">
@@ -434,6 +462,7 @@
 	<script src="./js/navbarScript.js"></script>
 	<script src="./js/carouselScript.js"></script>
 	<script src="./js/accordion-section.js"></script>
+	<script src="./js/response-message.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script

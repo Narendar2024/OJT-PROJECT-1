@@ -1,7 +1,7 @@
-setTimeout(function() {
-    var successMessageDiv = document.getElementById('successMessage');
-    if (successMessageDiv) {
-        console.log("Hiding success message after 5 seconds.");
-        successMessageDiv.style.display = 'none';
-    }
-}, 5000);
+const responseMessageDiv = document.getElementById('responseMessage');
+if (responseMessageDiv) {
+    // Set a timeout to hide the message after 3 seconds
+    setTimeout(() => {
+        responseMessageDiv.style.display = 'none';
+    }, 3000);
+}
