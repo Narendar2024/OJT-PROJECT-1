@@ -161,12 +161,20 @@ public class DBUtil {
 	}
 
 	// Method to update user details
+	// Method to update user details
 	public static void updateUser(int id, String firstname, String lastname, String email, String mobile,
 			String location) throws SQLException {
-		// Database logic here
-		try (Connection conn = getConnection();
-				PreparedStatement stmt = conn.prepareStatement(
-						"UPDATE users SET firstname = ?, lastname = ?, email = ?, mobile = ?, location = ? WHERE id = ?")) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		PreparedStatement logStmt = null;
+
+		try {
+			conn = getConnection();
+			conn.setAutoCommit(false); // Start transaction
+
+			// Update user details
+			String updateQuery = "UPDATE users SET firstname = ?, lastname = ?, email = ?, mobile = ?, location = ? WHERE id = ?";
+			stmt = conn.prepareStatement(updateQuery);
 
 			stmt.setString(1, firstname);
 			stmt.setString(2, lastname);
@@ -175,10 +183,40 @@ public class DBUtil {
 			stmt.setString(5, location);
 			stmt.setInt(6, id);
 
-			stmt.executeUpdate();
+			int result = stmt.executeUpdate();
+			System.out.println("Rows affected: " + result); // To confirm if the update was successful
+
+			if (result > 0) {
+				// Log the update in the activity_logs table
+				String logQuery = "INSERT INTO activity_logs (user_id, action, timestamp) VALUES (?, ?, CURRENT_TIMESTAMP)";
+				logStmt = conn.prepareStatement(logQuery);
+				logStmt.setInt(1, id);
+				logStmt.setString(2, "Updated user details.");
+
+				int logResult = logStmt.executeUpdate();
+				System.out.println("Activity log rows affected: " + logResult);
+			}
+
+			conn.commit(); // Commit the transaction
+
 		} catch (SQLException e) {
+			if (conn != null) {
+				try {
+					conn.rollback(); // Rollback in case of error
+				} catch (SQLException rollbackEx) {
+					rollbackEx.printStackTrace();
+				}
+			}
 			e.printStackTrace();
-			throw e; // Make sure the SQLException is thrown back to the servlet
+			throw e; // Re-throw the exception
+		} finally {
+			// Close all resources
+			if (stmt != null)
+				stmt.close();
+			if (logStmt != null)
+				logStmt.close();
+			if (conn != null)
+				conn.close();
 		}
 	}
 
@@ -195,16 +233,20 @@ public class DBUtil {
 		return isDeleted; // Return true if deletion was successful
 	}
 
-	// Method to log user activity
-	public static void logUserActivity(int userId, String activity) {
+	// Method to log user activity in the activity_logs table
+	public static void logUserActivity(int userId, String action) {
 		try (Connection con = getConnection()) {
-			String query = "INSERT INTO user_activity_log (user_id, activity, timestamp) VALUES (?, ?, NOW())";
+			String query = "INSERT INTO activity_logs (user_id, action, timestamp) VALUES (?, ?, NOW())";
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setInt(1, userId);
-			ps.setString(2, activity);
-			ps.executeUpdate();
+			ps.setString(2, action);
+
+			int rowsInserted = ps.executeUpdate();
+			System.out.println("Rows inserted: " + rowsInserted); // Debugging info
+
 		} catch (SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace(); // Check for any exceptions that might block insertion
 		}
 	}
+
 }
