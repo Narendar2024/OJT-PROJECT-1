@@ -99,8 +99,6 @@
 	}
 	%>
 
-
-
 	<!-- Nav Bar Start -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
@@ -121,9 +119,10 @@
 				id="navbarContent">
 				<!-- Centered Links -->
 				<ul class="navbar-nav mx-auto">
-					<li class="nav-item"><a class="nav-link" href="#main-content">Donations</a></li>
+					<li class="nav-item"><a class="nav-link" href="donations.jsp">Donations</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
+					<li class="nav-item"><a class="nav-link" href="social_media.jsp">Social Media</a></li>
 				</ul>
 
 				<!-- Search, Username, and Logout Button -->
@@ -254,16 +253,7 @@
 				</div>
 
 				<!-- New Sections -->
-				<div class="col-md-4 mb-4">
-					<div class="category-block text-center p-3 text-black"
-						onclick="window.location.href='state_wise_donation.jsp';"
-						style="background-color: #eef2e2;">
-						<img
-							src="https://via.placeholder.com/600x400?text=State+Wise+Donation"
-							class="category-image" alt="State Wise">
-						<h3>State-Wise Donation</h3>
-					</div>
-				</div>
+
 				<div class="col-md-4 mb-4">
 					<div class="category-block text-center p-3 text-black"
 						onclick="window.location.href='ngo_wise_donation.jsp';"
@@ -272,6 +262,16 @@
 							src="https://i0.wp.com/ketto.blog/wp-content/uploads/2022/08/shutterstock_1797442786-min.jpg?fit=1024%2C577&ssl=1"
 							class="category-image" alt="NGO Wise">
 						<h3>NGO-Wise Donation</h3>
+					</div>
+				</div>
+								<div class="col-md-4 mb-4">
+					<div class="category-block text-center p-3 text-black"
+						onclick="window.location.href='state_wise_donation.jsp';"
+						style="background-color: #eef2e2;">
+						<img
+							src="https://via.placeholder.com/600x400?text=Coming Soon..."
+							class="category-image" alt="State Wise">
+						<h3>Disaster Relief Fund</h3>
 					</div>
 				</div>
 			</div>
@@ -729,9 +729,9 @@
 		</div>
 	</div>
 	<!-- Event End -->
+<!-- 
 
-
-	<!-- Team Start -->
+	 Team Start 
 	<div class="team">
 		<div class="container">
 			<div class="section-header text-center">
@@ -810,8 +810,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- Team End -->
-
+	
+-->
 
 	<!-- Volunteer Start -->
 	<div class="volunteer" data-parallax="scroll"

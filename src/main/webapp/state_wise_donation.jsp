@@ -72,7 +72,10 @@
         background-color: orange;
         border-color: orange;
       }
-
+.container{
+text-align: center;
+align-content: center;
+}
 
     </style>
   </head>
@@ -127,11 +130,10 @@
     </nav>
 
 
-    <!-- Footer -->
-    <footer class="footer text-center py-3">
-        <p>&copy; 2024 Donation Drive. All rights reserved.</p>
-        
-    </footer>
+  <div class="container">
+  <h2>Coming Soon...</h2>
+  <h3>with in 20 day's</h3>
+  </div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
