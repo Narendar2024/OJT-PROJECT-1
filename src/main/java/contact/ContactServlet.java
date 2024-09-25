@@ -49,7 +49,7 @@ public class ContactServlet extends HttpServlet {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // Create SQL insert statement
-            String sql = "INSERT INTO contacts (name, email, phone, query, message) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO contact_messages (name, email, phone, query_type, message) VALUES (?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, name);
             pstmt.setString(2, email);

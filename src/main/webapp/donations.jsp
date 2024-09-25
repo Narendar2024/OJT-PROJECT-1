@@ -410,6 +410,68 @@
 			</table>
 		</div>
 	</div>
+	
+	<!-- Footer -->
+
+	<footer>
+		<div class="footer-container">
+			<div class="footer-section">
+				<h3 class="name">
+					<i class="fa-solid fa-link"></i>Manaakitanga
+				</h3>
+				<p>We’re curious, passionate, and committed to helping
+					nonprofits learn and grow. Donate now!</p>
+				<!-- <button class="donate-btn">
+					<a href="signin.jsp">DONATE NOW </a><span>&#x2665;</span>
+				</button> -->
+			</div>
+			<div class="footer-section">
+				<h3>CONTACTS</h3>
+				<p>
+					<i class="fas fa-map-marker-alt"></i>Hyderabad, Telangana
+				</p>
+				<p>
+					<i class="fas fa-envelope"></i> manaakitanga@mail.com
+				</p>
+				<p>
+					<i class="fas fa-phone-alt"></i> +91 9807645123
+				</p>
+				<div class="social-icons">
+					<i class="fab fa-twitter"></i> <i class="fab fa-facebook-f"></i> <i
+						class="fab fa-pinterest"></i> <i class="fab fa-instagram"></i>
+				</div>
+			</div>
+			<div class="footer-section">
+				<h3>NONPROFITS</h3>
+				<ul>
+					<li><a href="#">Nonprofit Resources</a></li>
+					<li><a href="#">Corporate Giving Resources</a></li>
+					<li><a href="#">Corporate Gift Cards</a></li>
+					<li><a href="#">CSR Made Simple</a></li>
+					<li><a href="#">Start an Application</a></li>
+				</ul>
+			</div>
+			<div class="footer-section">
+				<h3>DONORS</h3>
+				<ul>
+					<li><a href="#">Give or Redeem Gift Cards</a></li>
+					<li><a href="#">Donate in Honor</a></li>
+					<li><a href="#">Project of the Month Club</a></li>
+					<li><a href="#">Start a Fundraiser</a></li>
+					<li><a href="#">Donor Resources</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>Terms of use | Privacy Environmental Policy</p>
+			<p>
+				Copyright © 2024 Manaakitanga by <a href="#">TeamWebGenius</a>. All
+				Rights Reserved.
+			</p>
+		</div>
+
+	</footer>
+	
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -424,38 +486,44 @@
 			tables.forEach(function(table) {
 				table.style.display = 'none';
 			});
-
-			// Show the selected table
 			var selectedTable = document
 					.querySelector('.donation-table[data-category="' + category
 							+ '"]');
 			if (selectedTable) {
 				selectedTable.style.display = 'block';
 			}
+
+			updateActiveButton(category);
 		}
 
-		// Function to show all donation tables
 		function showAllTables() {
 			var tables = document.querySelectorAll('.donation-table');
 			tables.forEach(function(table) {
 				table.style.display = 'block';
 			});
+			updateActiveButton('all');
 		}
+		function updateActiveButton(activeCategory) {
+			var buttons = document.querySelectorAll('.filter-btn');
 
-		// Optionally, you can call showAllTables on page load to display all tables initially
+			buttons.forEach(function(button) {
+				if (activeCategory === 'all'
+						&& button.innerText.includes('All Donations')) {
+					button.classList.add('active');
+				} else if (button.innerText.includes(activeCategory.charAt(0)
+						.toUpperCase()
+						+ activeCategory.slice(1) + ' Donations')) {
+					button.classList.add('active');
+				} else {
+					button.classList.remove('active');
+				}
+			});
+		}
 		window.onload = function() {
 			showAllTables();
 		};
-		
-		filterButtons.forEach(button => {
-			button.addEventListener('click', () => {
-				// Remove active class from all buttons
-				filterButtons.forEach(btn => btn.classList.remove('active'));
-				// Add active class to the clicked button
-				button.classList.add('active');
-			});
-		});
 	</script>
+
 
 </body>
 </html>
